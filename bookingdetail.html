@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Detail</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+<style>
+    /* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background-color: #FAF7F0;
+        background-image: url(img/bgbody.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        color: #4A4947;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        background-color: #D8D2C2;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        max-width: 150px;
+    }
+
+    .booking-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .booking-header h1 {
+        font-size: 24px;
+        color: #4A4947;
+    }
+
+    .booking-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+    }
+
+    .booking-info p {
+        display: flex;
+        justify-content: space-between;
+        color: #4A4947;
+    }
+
+    .booking-info strong {
+        font-weight: 700;
+        color: #4A4947;
+    }
+
+    .ticket-details {
+        margin-top: 10px;
+    }
+
+    .transaction-details {
+        margin-top: 20px;
+        border-top: 1px solid #4A4947;
+        padding-top: 10px;
+    }
+
+    .transaction-details p {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .total-payment {
+        font-weight: bold;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .note {
+        font-size: 12px;
+        color: #4A4947;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .checkout-button {
+        width: 100%;
+        background-color: #4A4947;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .checkout-button a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+    .checkout-button:hover {
+        background-color: #B17457;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 400px) {
+        .booking-info p,
+        .transaction-details p {
+            font-size: 14px;
+        }
+
+        .total-payment {
+            font-size: 16px;
+        }
+
+        .checkout-button {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo2.png" alt="Edge Cinemaa Logo">
+        </div>
+        <div class="booking-header">
+            <h1>Booking Detail</h1>
+        </div>
+        <div class="booking-info">
+            <p><span>Judul Film</span><strong>Joker: Folie à Deux</strong></p>
+            <p><span>Tanggal</span><strong>Minggu, 04 Oktober 2024</strong></p>
+            <p><span>Tiket (3)</span><strong>C8, C9, C10</strong></p>
+            <p><span>Hours</span><strong>14:40</strong></p>
+        </div>
+        <div class="transaction-details">
+            <h3>Transaction Detail</h3>
+            <p><span>REGULAR SEAT</span><span>Rp. 35.000 x3</span></p>
+            <p><span>Service Charge (6%)</span><span>Rp. 15.000 x3</span></p>
+            <div class="total-payment">
+                <span>Total Payment</span>
+                <span>Rp. 150.000</span>
+            </div>
+        </div>
+        <p class="note">*Tiket yang sudah dipesan tidak dapat dibatalkan</p>
+        <button class="checkout-button"><a href="konfirmasiOTP.html">Proses</button></a>
+    </div>
+</body>
+</html>

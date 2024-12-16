@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette */
+        :root {
+            --bg-color: #FAF7F0;
+            --card-color: #D8D2C2;
+            --button-primary: #B17457;
+            --button-secondary: #4A4947;
+            --text-color: #000000;
+            --icon-color: #4A4947;
+            --highlight-color: #FFFF00;
+            --logout-color: #FF3D3D;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: url(img/bgbody.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 100px;
+        }
+
+        .navbar-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .navbar-buttons a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-home {
+            background-color: var(--highlight-color);
+            color: black;
+        }
+
+        .btn-logout {
+            background-color: var(--logout-color);
+            color: white;
+        }
+        /* Tabs Styling */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: white;
+            background-color: var(--button-primary);
+        }
+
+        .tabs .btn-secondary {
+            background-color: var(--button-secondary);
+        }
+
+        .tabs a {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+        }
+
+        /* Ticket Card Styling */
+        .tickets-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .ticket-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .ticket-card h3 {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .ticket-info {
+            color: var(--text-color);
+        }
+
+        .download-button {
+            background-color: var(--button-secondary);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .download-button:hover {
+            background-color: #3a3937;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .ticket-card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo img {
+                height: 80px;
+            }
+
+            .navbar-buttons {
+                flex-direction: column;
+                gap: 5px;
+                margin-top: 10px;
+            }
+
+            .tabs {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="img/logo2.png" alt="Edge Cinema Logo">
+        </div>
+        <div class="navbar-buttons">
+            <button class="btn-home"><a href="home.html">Home</a></button>
+            <button class="btn-logout"><a href="index.html">Log out</a></button>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="btn-primary">Akan Tayang</button>
+        <button class="btn-secondary"><a href="riwayattiket.html">Riwayat</a></button>
+    </div>
+
+    <div class="tickets-container">
+        <div class="ticket-card">
+            <h3>Date</h3>
+            <p class="ticket-info">Rabu, 21 Maret 2024</p>
+            <h3>Movie Title</h3>
+            <p class="ticket-info">SPIDERMAN NO WAY HOME</p>
+            <p class="ticket-info">Tiket (3) - C8, C9, C10</p>
+            <p class="ticket-info">Hours: 14:40</p>
+            <button class="download-button">Download</button>
+        </div>
+        <div class="ticket-card">
+            <h3>Date</h3>
+            <p class="ticket-info">Senin, 23 Mei 2024</p>
+            <h3>Movie Title</h3>
+            <p class="ticket-info">SPIDERMAN NO WAY HOME</p>
+            <p class="ticket-info">Tiket (3) - C8, C9, C10</p>
+            <p class="ticket-info">Hours: 14:40</p>
+            <button class="download-button">Download</button>
+        </div>
+    </div>
+</body>
+</html>

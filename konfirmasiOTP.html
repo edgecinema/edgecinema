@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Verification</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+    /* Reset CSS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #4A4947;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: #D8D2C2;
+        border-radius: 20px;
+        padding: 40px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .otp-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #4A4947;
+        margin-bottom: 20px;
+    }
+
+    .otp-inputs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .otp-input {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid #B17457;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #4A4947;
+        background-color: #FAF7F0;
+    }
+
+    .otp-input:focus {
+        border-color: #B17457;
+        outline: none;
+    }
+
+    .resend {
+        color: #B17457;
+        font-size: 14px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .send-button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        background-color: #4A4947;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .send-button a {
+        color: #FAF7F0;
+        text-decoration: none;
+    }
+
+    .send-button:hover {
+        background-color: #B17457;
+    }
+
+    /* Responsive design */
+    @media (max-width: 500px) {
+        .otp-input {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        .send-button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo2.png" alt="Edge Cinema Logo">
+        </div>
+        <h2 class="otp-title">Masukkan OTP</h2>
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+        </div>
+        <div class="resend">Kirim Ulang OTP...</div>
+        <button class="send-button"><a href="done.html">Kirim</button></a>
+    </div>
+
+    <script>
+        // Script untuk fokus otomatis pada input berikutnya
+        const otpInputs = document.querySelectorAll('.otp-input');
+
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value.length > 0 && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+
+            input.addEventListener('keydown', (event) => {
+                if (event.key === 'Backspace' && index > 0 && input.value === '') {
+                    otpInputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

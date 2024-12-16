@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette */
+        :root {
+            --bg-color: #FAF7F0;
+            --card-color: #D8D2C2;
+            --button-primary: #B17457;
+            --button-secondary: #4A4947;
+            --text-color: #000000;
+            --icon-color: #4A4947;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            text-align: center;
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .container h2 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .container .icon-check {
+            font-size: 50px;
+            color: var(--icon-color);
+            background-color: #B8DEB0;
+            border-radius: 50%;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--button-primary);
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background-color: var(--card-color);
+            color: var(--text-color);
+            border: 2px solid var(--button-secondary);
+        }
+
+        .btn-primary a {
+            color: #FAF7F0;
+            text-decoration: none;
+        }
+
+        .btn-secondary a {
+            color: #FAF7F0;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #9c6145;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d0c6b2;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container h2 {
+                font-size: 1.2rem;
+            }
+            .container button {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/logo2.png" alt="Edge Cinema Logo">
+        <h2>Pembayaran Berhasil</h2>
+        <div class="icon-check">✔️</div>
+        <button class="btn-primary"><a href="tiketsaya.html">Lihat Tiket</button></a>
+        <button class="btn-secondary"><a href="home.html">Home</button></a>
+    </div>
+</body>
+</html>

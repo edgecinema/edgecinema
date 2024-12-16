@@ -1,0 +1,621 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+
+        main {
+            scroll-behavior: smooth;
+            height: 100vh;
+            overflow: scroll;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #FAF7F0;
+        }
+
+        header .logo img {
+            width: 100px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a, header nav button {
+            color: #FAF7F0;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: #B17457;
+            border: none;
+            cursor: pointer;
+        }
+
+        header .menu-toggle {
+            display: none;
+            background-color: #B17457;
+            color: #FAF7F0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: #FAF7F0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu a, .dropdown-menu button {
+            color: #B17457;
+            background-color: #FAF7F0;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            text-align: left;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        
+
+        /* Hero Section */
+        .hero {
+            background-image: url(bckg.webp);
+            background-size: cover;
+            background-color: #D8D2C2;
+            background-position: left;
+            padding: 50px;
+            color: #4A4947;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            max-width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .hero-content img {
+            width: 300px;
+            flex-shrink: 0;
+        }
+
+        .hero-text h1 {
+            font-size: 40px;
+        }
+
+        .hero-text p {
+            margin: 15px 0;
+        }
+
+        .bawah {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .bawahaha {
+            font-size: x-large;
+        }
+
+        .hero-text .highlight {
+            color: #B17457;
+            font-weight: bold;
+            font-size: x-large;
+        }
+        
+
+        #aboutUsSection {
+            padding: 20px;
+            background-color: #FAF7F0;
+            text-align: center;
+        }
+
+        #aboutUsSection h2 {
+            margin-bottom: 20px;
+        }
+
+        #aboutUsSection .team-member {
+            display: inline-block;
+            width: 150px;
+            margin: 10px;
+            text-align: center;
+            vertical-align: top; 
+        }
+
+        #aboutUsSection .team-member img {
+            width: 120px;
+            border-radius: 10%;
+            display: block;
+            margin: 0 auto; 
+        }
+
+        #aboutUsSection .team-member h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #aboutUsSection .team-member p {
+
+            font-size: 14px;
+        }
+
+        /* Now Showing Section */
+        .now-showing {
+            background-color: #FAF7F0;
+            padding: 20px 50px;
+            text-align: center;
+        }
+
+        .movies {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px; /* Tambahkan padding untuk memberi ruang */
+            scroll-behavior: smooth; /* Animasi scroll yang lebih halus */
+        }
+
+        /* Tambahkan scrollbar khusus */
+        .movies::-webkit-scrollbar {
+            height: 8px; /* Tinggi scrollbar horizontal */
+        }
+
+        .movies::-webkit-scrollbar-thumb {
+            background-color: #B17457; /* Warna scrollbar */
+            border-radius: 5px; /* Bikin ujungnya melengkung */
+        }
+
+        .movies::-webkit-scrollbar-thumb:hover {
+            background-color: #8F5F42; /* Warna saat hover */
+        }   
+
+        .movies::-webkit-scrollbar-track {
+            background-color: #FAF7F0; /* Warna background track scrollbar */
+            border-radius: 5px; /* Buat estetis */
+        }
+
+        /* Estetika gambar film */
+        .movies img {
+            width: 180px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 2px solid #D8D2C2;
+            flex-shrink: 0;
+            transition: transform 0.3s ease; /* Animasi saat hover */
+        }
+
+        .movies img:hover {
+            transform: scale(1.05); /* Zoom-in saat gambar di-hover */
+            cursor: pointer; /* Tunjukkan bahwa gambar bisa diklik */
+        }
+
+
+        /* Synopsis Section */
+        .synopsis {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 50px;
+            background-color: #FAF7F0;
+            font-size: x-large;
+            flex-direction: row;
+            text-align: start;
+            
+        }
+
+        .synopsis img {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .synopsis-content h3 {
+            font-size: 40px;
+            color: #4A4947;
+            margin-bottom: 10px;
+        }
+
+        .tags span {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #D8D2C2;
+            color: #4A4947;
+            border-radius: 15px;
+            font-size: 15px;
+            margin: 5px 3px;
+        }
+
+        /* Footer */
+        footer {
+        background-color: #4A4947;
+        color: #FAF7F0;
+        padding: 20px 50px;
+        font-size: 14px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #D8D2C2;
+    }
+
+    .footer-section p, .footer-section a {
+        color: #D8D2C2;
+        margin-bottom: 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .footer-section a:hover {
+        color: #FAF7F0;
+    }
+
+    .social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start; /* Atur ke kiri */
+    margin-top: 10px;
+    }
+
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.2s ease;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.2); /* Efek zoom saat hover */
+    }
+
+    @media (max-width: 750px) {
+        .social-icons {
+            gap: 10px; /* Perkecil jarak antar ikon untuk layar kecil */
+            justify-content: center;
+        }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        border-top: 1px solid #D8D2C2;
+        padding-top: 10px;
+    }
+
+        /* Responsive Design */
+        @media (max-width: 750px) {
+            header nav {
+                display: none;
+            }
+
+            header .menu-toggle {
+                display: block;
+            }
+            
+            .dropdown-menu {
+                display: none;
+            }   
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .hero-content img {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .bawah {
+                font-size: 24px;
+            }
+
+            .bawahaha, .hero-text .highlight {
+                font-size: 18px;
+            }
+
+            .now-showing {
+                padding: 20px;
+            }
+
+            .movies img {
+                width: 140px;
+            }
+
+            .synopsis {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .synopsis img {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .synopsis-content h3 {
+                font-size: 28px;
+            }
+
+            footer {
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content p {
+                text-align: center;
+                max-width: 100%;
+            }
+            .footerlogo{
+                width: 100%;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDGE CINEMA</title>
+    <script src="https://cdn.pagesense.io/js/kelompok01/25be8a944698452c8300656fa8f5c528.js"></script>
+
+</head>
+<body>
+<main>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="img/logo2.png" alt="EDGE CINEMA Logo">
+        </div>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#ns">Now Showing</a>
+            <a href="#aboutUsSection">About Us</a>
+            <a href="login.html">login</a>
+        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#hero">Home</a>
+            <a href="#ns">Now Showing</a>
+            <a href="#aboutUsSection">About Us</a>
+            <a href="login.html">login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <img src="img/bgheader-removebg-preview.png" alt="Popcorn">
+            <div class="hero-text">
+                <h1>Selamat Datang di EDGE CINEMA</h1>
+                <p class="bawah">Pengalaman Menonton Lebih dari Sekadar Bioskop!</p>
+                <p class="bawahaha">Temukan dan pesan tiket film terbaru dengan mudah dan cepat. EDGE CINEMA memberikan kenyamanan yang nyaman, aman, serta fitur eksklusif untuk membuat setiap momen menonton Anda lebih baik.</p>
+                <p class="highlight">Pesan tiket sekarang dan nikmati pengalaman sinematik terbaik di EDGE CINEMA!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Now Showing Section -->
+    <section id="ns" class="now-showing">
+        <h2>Now Showing</h2>
+        <div class="movies">
+            <img id="movie1" src="img/f11.jpg" alt="dp">
+            <img id="movie2" src="img/f6.jpg" alt="kungfu">
+            <img id="movie3" src="img/f16.jpg" alt="alien">
+            <img id="movie4" src="img/f14.jpg" alt="bt">
+            <img src="img/f13.jpg" alt="Movie 5">
+            <img src="img/f12.jpg" alt="Movie 6">
+            <img src="img/f7.jpg" alt="Movie 7">
+            <img src="img/f8.jpg" alt="Movie 8">
+            <img src="img/f9.jpg" alt="Movie 9">
+            <img src="img/f10.jpg" alt="Movie 10">
+            <img src="img/joker1.jpg" alt="Movie 11">
+        </div>
+    </section>
+
+    <!-- Synopsis Section -->
+    <section id="sy" class="synopsis">
+        <img id="synopsis-image" src="img/f10.jpg" alt="Movie Poster">
+        <div class="synopsis-content">
+            <h3>Sinopsis</h3>
+            <p id="synopsis-text">-</p>
+            <p><strong>Director:</strong> <span id="director">-</span></p>
+            <p><strong>Writers:</strong> <span id="writers">-</span></p>
+            <p><strong>Stars:</strong> <span id="stars">-</span></p>
+            <div class="tags" id="tags">
+                <!-- Genre tags akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="aboutUsSection">
+        <h2>About Us</h2>
+        <div class="team-member">
+            <img src="img/member1.jpg" alt="Person 1">
+            <h3>Dani Noor Ridlo</h3>
+            <p>202251157</p>
+        </div>
+        <div class="team-member">
+            <img src="img/member2.jpg" alt="Person 2">
+            <h3>Muhammad Farid Ardiansyah</h3>
+            <p>202251106</p>
+        </div>
+        <div class="team-member">
+            <img src="img/member3.jpg" alt="Person 3">
+            <h3>Danang Budiman Hidayat</h3>
+            <p>202251235</p>
+        </div>
+        <div class="team-member">
+            <img src="img/member4.jpg" alt="Person 4">
+            <h3>Athaya Bisma Jagadhita</h3>
+            <p>202251177</p>
+        </div>
+        <div class="team-member">
+            <img src="img/member5.jpg" alt="Person 5">
+            <h3>Dimas khoiruddin</h3>
+            <p>202251257</p>
+        </div>
+    </section>  
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img class="footerlogo" src="img/logo.png" alt="EDGE CINEMA Logo">
+                <p class="futer">EDGE CINEMA adalah platform hiburan untuk para pecinta film di Indonesia. Nikmati pengalaman menonton terbaik dengan kami!</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <a href="#ns">Now Showing</a>
+                <a href="#">Spotlight</a>
+                <a href="#">Trailers</a>
+                <a href="#">EDGE Cinema Now</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: EDGEcinema@gmail.com</p>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><img src="img/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram"><img src="img/instagram-icon.png" alt="Instagram"></a>
+                    <a href="#" aria-label="TikTok"><img src="img/tiktok-icon.png" alt="TikTok"></a>
+                    <a href="#" aria-label="X"><img src="img/twitter-icon.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EDGE CINEMA. All Rights Reserved. | Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+</main>
+
+<script>
+    // Data untuk setiap film
+    const movies = {
+        "movie1": {
+            "image": "img/f11.jpg",
+            "synopsis": "Wade Wilson yang lesu bekerja keras dalam kehidupan sipil dengan hari-harinya sebagai tentara bayaran yang fleksibel secara moral, Deadpool, di belakangnya.Namun ketika dunia asalnya menghadapi ancaman eksistensial, Wade harus dengan enggan kembali bekerja sama dengan Wolverine yang lebih enggan lagi.",
+            "director": "Shawn Levy",
+            "writers": "Ryan Reynolds, Rhett Reese, Paul Wernick",
+            "stars": "Ryan Reynolds , Hugh Jackman , Emma Corrin",
+            "genres": ["Science Fiction", "Action", "Comedy"]
+        },
+        "movie2": {
+            "image": "img/f6.jpg",
+            "synopsis": "Po bersiap untuk menjadi pemimpin spiritual di Lembah Perdamaiannya, tetapi juga membutuhkan seseorang untuk menggantikannya sebagai Dragon Warrior. Oleh karena itu, dia akan melatih seorang praktisi kung fu baru untuk posisi tersebut dan akan bertemu dengan penjahat bernama Bunglon yang memunculkan penjahat dari masa lalu.",
+            "director": "Mike Mitchell dan Stephanie Stine",
+            "writers": "Jonathan Aibel, Glenn Berger, dan Darren Lemke",
+            "stars": "Jack Black, Awkwafina, dan Viola Davis",
+            "genres": ["Comedy", "Adventure", "Fantasy", "Animation", "Family"]
+        },
+        "movie3": {
+            "image": "img/f16.jpg",
+            "synopsis": "Saat mengambil bagian dalam stasiun luar angkasa yang terbengkalai, sekelompok penyelidik ruang angkasa muda berhadapan langsung dengan bentuk kehidupan yang paling mengerikan di alam semesta.",
+            "director": "Fede Alvarez",
+            "writers": "Dan O'Bannon, Ronald Shusett dan Fede Alvarez",
+            "stars": "Cailee Spaeny, David Jonsson dan Archie Renaux",
+            "genres": ["Sci-Fi", "Mistery", "Thriller"]
+        },
+        "movie4": {
+            "image": "img/f14.jpg",
+            "synopsis": "Ketika miliarder teknologi Slater King bertemu dengan pelayan koktail Frida di acara penggalangan dana miliknya, ia mengundangnya untuk bergabung dengannya dan teman-temannya dalam sebuah liburan impian di pulau pribadinya. Namun, terlepas dari suasana yang epik, orang-orang yang cantik, sampanye yang terus mengalir, dan pesta dansa hingga larut malam, Frida dapat merasakan ada sesuatu yang menyeramkan yang bersembunyi di balik fasad pulau yang rimbun.",
+            "director": "Zoë Kravitz",
+            "writers": "E.T. Feigenbaum dan Zoë Kravitz",
+            "stars": "Naomi Ackie, Channing Tatum, Alia Shawkat",
+            "genres": ["Mistery", "Thriller"]
+        }
+    };
+
+    const movieImages = document.querySelectorAll('.movies img');
+
+        movieImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                const movieId = e.target.id;
+                const movie = movies[movieId];
+
+                // Update the synopsis section
+                document.getElementById('synopsis-image').src = movie.image;
+                document.getElementById('synopsis-text').textContent = movie.synopsis;
+                document.getElementById('director').textContent = movie.director;
+                document.getElementById('writers').textContent = movie.writers;
+                document.getElementById('stars').textContent = movie.stars;
+
+                // Update genres
+                const tagsDiv = document.getElementById('tags');
+                tagsDiv.innerHTML = '';
+                movie.genres.forEach(genre => {
+                    const span = document.createElement('span');
+                    span.textContent = genre;
+                    tagsDiv.appendChild(span);
+                });
+            });
+        });
+
+
+    // Event listeners untuk gambar film
+    document.getElementById("movie1").addEventListener("click", () => updateSynopsis("movie1"));
+    document.getElementById("movie2").addEventListener("click", () => updateSynopsis("movie2"));
+    document.getElementById("movie3").addEventListener("click", () => updateSynopsis("movie3"));
+    document.getElementById("movie4").addEventListener("click", () => updateSynopsis("movie4"));
+
+    // Fungsi untuk toggle menu dropdown
+    function toggleMenu() {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
+</body>
+</html>

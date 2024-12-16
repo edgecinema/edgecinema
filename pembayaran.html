@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilihan Pembayaran</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+<style>
+    /* Styles for Payment Page */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background-color: #FAF7F0;
+        background-image: url(img/bgbody.jpg);
+        background-size: cover;
+        color: #4A4947;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1440px;
+        background-color: #D8D2C2;
+        border-radius: 15px;
+        padding: 20px 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .back-button {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .back-button a {
+        text-decoration: none;
+        color: #4A4947  ;
+        background-color: #B17457;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-button a:hover {
+        background-color: #4A4947;
+    }
+
+    .payment-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .payment-method {
+        background-color: #B17457;
+        border-radius: 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #FAF7F0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+
+    .payment-method a {
+        text-decoration: none; /* Hilangkan garis bawah */
+        color: inherit; /* Ikuti warna teks induk */
+        display: flex; /* Link mencakup seluruh elemen */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .payment-method:hover {
+        transform: scale(1.05);
+    }
+
+    .payment-method img {
+        width: 100%;
+        max-width: 120px;
+        margin-bottom: 10px;
+    }
+
+    .payment-method p {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #FAF7F0; /* Tetapkan warna teks agar konsisten */
+    }
+
+    /* Responsiveness */
+    @media (max-width: 600px) {
+        .container {
+            padding: 10px;
+        }
+
+        .payment-method {
+            padding: 10px;
+        }
+
+        .payment-method img {
+            max-width: 60px;
+        }
+
+        .payment-method p {
+            font-size: 12px;
+        }
+
+        .back-button a {
+            font-size: 12px;
+            padding: 8px 16px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="back-button">
+            <a href="pemilihankursi.html">Kembali</a>
+        </div>
+        <div class="logo">
+            <img src="img/logo2.png" alt="Edge Cinemaa Logo" width="150">
+        </div>
+        <div class="payment-options">
+            <div class="payment-method">
+                <a href="bookingdetail.html">
+                    <img src="img/ovo1.png" alt="OVO">
+                    <p>Pembayaran OVO</p>
+                </a>
+            </div>
+            <div class="payment-method">
+                <a href="bookingdetail.html">
+                    <img src="img/qris1.png" alt="QRIS">
+                    <p>Pembayaran QRIS</p>
+                </a>
+            </div>
+            <div class="payment-method">
+                <a href="bookingdetail.html">
+                    <img src="img/visa1.png" alt="Visa Mastercard">
+                    <p>Pembayaran Transfer</p>
+                </a>
+            </div>
+            <div class="payment-method">
+                <a href="bookingdetail.html">
+                    <img src="img/dana1.png" alt="DANA">
+                    <p>Pembayaran Dana</p>
+                </a>
+            </div>
+            <div class="payment-method">
+                <a href="bookingdetail.html">
+                    <img src="img/gopay1.png" alt="Gopay">
+                    <p>Pembayaran Gopay</p>
+                </a>
+            </div>
+            <div class="payment-method">
+                <a href="bookingdetail.html">
+                    <img src="img/va1.png" alt="Virtual Account">
+                    <p>Pembayaran VA</p>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

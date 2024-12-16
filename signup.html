@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - EDGE CINEMA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-image: url(img/bgbody.jpg);
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .poster {
+            width: 50%;
+            background-image: url(img/f14.jpg); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-container {
+            width: 50%;
+            padding: 40px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container .logo {
+            margin-bottom: 20px;
+        }
+
+        .form-container .logo img {
+            width: 80px;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-container form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-container button {
+            padding: 10px;
+            background-color: #4a6cf7;
+            color: #ffffff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .form-container button:hover {
+            background-color: #3b5ccd;
+        }
+
+        .form-container p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-container p a {
+            color: #4a6cf7;
+            text-decoration: none;
+        }
+
+        .form-container p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                max-width: 100%;
+            }
+
+            .poster,
+            .form-container {
+                width: 100%;
+            }
+
+            .poster {
+                height: 300px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+  
+</head>
+<body>
+
+<div class="container">
+    <div class="poster">
+    </div>
+    <div class="form-container">
+        <div class="logo">
+            <img src="img/logo1.jpg" alt="EDGE CINEMA Logo"> 
+        </div>
+        <h2>Buat Akun</h2>
+        <form>
+            <label for="name">Nama</label>
+            <input type="text" id="name" placeholder="Masukkan Nama Anda">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Masukkan Email Anda">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan Password Anda">
+
+            <button> <a href="login.html">Buat</button></a>
+        </form>
+        <p>Sudah Punya Akun? <a href="login.html">Klik Disini</a></p>
+    </div>
+</div>
+
+</body>
+</html>

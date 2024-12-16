@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EDGE CINEMA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-image: url(img/bgbody.jpg);
+            background-size: cover;
+        }
+
+        .login-container {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .login-image {
+            width: 50%;
+            background-image: url(img/f11.jpg); /* Ganti dengan URL gambar yang sesuai */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-form {
+            width: 50%;
+            padding: 40px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-form img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .login-form h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-form label {
+            align-self: flex-start;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .login-form button a {
+            text-decoration: none; /* Hilangkan garis bawah */
+            color: #ffffff; /* Warna teks menjadi putih */
+            display: block; /* Buat link mengisi seluruh tombol */
+            width: 100%;
+            height: 100%;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #B17457;
+            color: #ffffff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .login-form button:hover {
+            background-color: #a46348; /* Warna saat di-hover */
+        }
+
+        .login-form p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-form p a {
+            color: #4a6cf7;
+            text-decoration: none;
+        }
+
+        .login-form p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                max-width: 100%;
+            }
+
+            .login-image,
+            .login-form {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-image">
+    </div>
+    <div class="login-form">
+        <img src="img/logo1.jpg" alt="EDGE CINEMA Logo">
+        <h2>Masuk</h2>
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Masukkan Email Anda">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Masukkan Password Anda">
+        <button> <a href="home.html">Masuk </a></button>
+        <p>Belum Punya Akun? <a href="signup.html">Klik Disini</a></p>
+    </div>
+</div>
+
+</body>
+</html>

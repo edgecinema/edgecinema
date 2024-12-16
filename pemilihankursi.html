@@ -1,0 +1,254 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <title>Seat Selection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FAF7F0;
+            color: #4A4947;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-size: 2.5rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .seat {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            display: inline-block;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .seat.available {
+            background-color: #B17457;
+            color: white;
+        }
+        .seat.selected {
+            background-color: #D8D2C2;
+            color: black;
+        }
+        .seat.occupied {
+            background-color: #4A4947;
+            color: white;
+            cursor: not-allowed;
+        }
+
+        .screen {
+            background-color: #4A4947;
+            color: #FAF7F0;
+            padding: 10px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #D8D2C2;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #B17457;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #4A4947;
+        }
+
+        .footer .total, .footer .seats {
+            font-size: 20px;
+        }
+
+        .footer .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            min-width: 150px;
+        }
+
+        .footer .btn a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 760px) {
+            .seat {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+            }
+            .screen {
+                width: 80%;
+            }
+            .footer .total, .footer .seats {
+                font-size: 16px;
+            }
+            .footer .btn {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+        }
+        
+        @media (max-width: 760px) {
+            .screen {
+                width: 90%;
+            }
+            .footer {
+                padding: 10px;
+                gap: 5px;
+            }
+            .footer .total, .footer .seats {
+                font-size: 14px;
+            }
+            .footer .btn {
+                font-size: 14px;
+                padding: 6px 10px;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="img/logo2.png" alt="Edge Cinema logo" width="100" height="100">
+    </div>
+    <h1>Kursi</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <!-- Seats layout -->
+                <div class="seat available">A1</div>
+                <div class="seat available">A2</div>
+                <div class="seat available">A3</div>
+                <div class="seat available">A4</div>
+                <div class="seat available">A5</div>
+                <div class="seat available">A6</div>
+                <div class="seat available">A7</div>
+                <div class="seat available">A8</div>
+                <div class="seat available">A9</div>
+                <div class="seat available">A10</div>
+                
+                <div class="seat available">B1</div>
+                <div class="seat available">B2</div>
+                <div class="seat available">B3</div>
+                <div class="seat available">B4</div>
+                <div class="seat available">B5</div>
+                <div class="seat available">B6</div>
+                <div class="seat available">B7</div>
+                <div class="seat available">B8</div>
+                <div class="seat available">B9</div>
+                <div class="seat available">B10</div>
+                
+                <div class="seat available">C1</div>
+                <div class="seat available">C2</div>
+                <div class="seat available">C3</div>
+                <div class="seat available">C4</div>
+                <div class="seat available">C5</div>
+                <div class="seat available">C6</div>
+                <div class="seat available">C7</div>
+                <div class="seat available">C8</div>
+                <div class="seat available">C9</div>
+                <div class="seat available">C10</div>
+                
+                <div class="seat available">D1</div>
+                <div class="seat available">D2</div>
+                <div class="seat available">D3</div>
+                <div class="seat available">D4</div>
+                <div class="seat available">D5</div>
+                <div class="seat available">D6</div>
+                <div class="seat available">D7</div>
+                <div class="seat available">D8</div>
+                <div class="seat available">D9</div>
+                <div class="seat available">D10</div>
+                
+                <div class="seat available">E1</div>
+                <div class="seat available">E2</div>
+                <div class="seat available">E3</div>
+                <div class="seat available">E4</div>
+                <div class="seat available">E5</div>
+                <div class="seat available">E6</div>
+                <div class="seat available">E7</div>
+                <div class="seat available">E8</div>
+                <div class="seat available">E9</div>
+                <div class="seat available">E10</div>
+                
+                <div class="seat available">F1</div>
+                <div class="seat available">F2</div>
+                <div class="seat available">F3</div>
+                <div class="seat available">F4</div>
+                <div class="seat available">F5</div>
+                <div class="seat available">F6</div>
+                <div class="seat available">F7</div>
+                <div class="seat available">F8</div>
+                <div class="seat available">F9</div>
+                <div class="seat available">F10</div>
+                
+                <div class="seat available">G1</div>
+                <div class="seat available">G2</div>
+                <div class="seat available">G3</div>
+                <div class="seat available">G4</div>
+                <div class="seat available">G5</div>
+                <div class="seat available">G6</div>
+                <div class="seat available">G7</div>
+                <div class="seat available">G8</div>
+                <div class="seat available">G9</div>
+                <div class="seat available">G10</div>
+            </div>
+        </div>
+    </div>
+    <div class="screen">Layar Bioskop</div>
+    <div class="footer">
+        <div class="total">TOTAL<br>RP. <span id="total">0</span></div>
+        <div class="seats">Kursi<br><span id="selected-seats">-</span></div>
+        <button class="btn btn-warning"><a href="pemesanantiket.html">Kembali</button></a>
+        <button class="btn btn-success"><a href="pembayaran.html">Proses Pembayaran</button></a>
+    </div>
+
+    <script>
+        // JavaScript for selecting seats
+        const seats = document.querySelectorAll('.seat.available');
+        const selectedSeats = document.getElementById('selected-seats');
+        const totalAmount = document.getElementById('total');
+        let selectedSeatNumbers = [];
+        const seatPrice = 35000;
+
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                if (seat.classList.contains('selected')) {
+                    // Deselect seat
+                    seat.classList.remove('selected');
+                    selectedSeatNumbers = selectedSeatNumbers.filter(num => num !== seat.textContent);
+                } else {
+                    // Select seat
+                    seat.classList.add('selected');
+                    selectedSeatNumbers.push(seat.textContent);
+                }
+                updateSelection();
+            });
+        });
+
+        function updateSelection() {
+            selectedSeats.textContent = selectedSeatNumbers.length > 0 ? selectedSeatNumbers.join(', ') : '-';
+            totalAmount.textContent = selectedSeatNumbers.length * seatPrice;
+        }
+    </script>
+</body>
+</html>
